@@ -1,0 +1,127 @@
+body {
+    background: #ffe6f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Animação do boneco */
+@keyframes balancar {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.boneco {
+    animation: balancar 2s infinite ease-in-out;
+}
+
+.cabeca {
+    width: 100px;
+    height: 100px;
+    background: #ffd1dc;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+
+.olho {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+}
+
+.olho.esquerdo { left: 25px; }
+.olho.direito { right: 25px; }
+
+.boca {
+    width: 40px;
+    height: 20px;
+    border-bottom: 3px solid black;
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.corpo {
+    width: 80px;
+    height: 120px;
+    background: #ff4d6d;
+    margin: auto;
+    border-radius: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fala {
+    margin-top: 20px;
+    height: 80px;
+    text-align: center;
+}
+
+.texto-amor {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 2s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nome mais romântico com brilho */
+.nome {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    color: #d1003f;
+    animation: brilho 2s ease-in-out infinite alternate;
+}
+
+@keyframes brilho {
+    from {
+        text-shadow: 0 0 5px #ff99bb;
+    }
+    to {
+        text-shadow: 0 0 20px #ff4d88;
+    }
+}
+
+/* Corações mais suaves */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 22px;
+    animation: subirSuave 3s ease-out forwards;
+}
+
+@keyframes subirSuave {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-250px) scale(1.5);
+        opacity: 0;
+    }
+}
